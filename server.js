@@ -17,7 +17,7 @@ app.get('/api/notes',function(req,res){
     res.sendFile(path.join(__dirname,'/db/db.json'));
 });
 app.get('/api/notes/:id',function(req,res){
-    var saved = JSON.parse(fs.readFileSync('/db/db.json','utf8'));
+    var saved = JSON.parse(fs.readFileSync('./db/db.json','utf8'));
     res.json(saved[Number(req.params.id)]);
 });
 app.get('*',function(req,res){
